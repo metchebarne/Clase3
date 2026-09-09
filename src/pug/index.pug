@@ -214,6 +214,15 @@ html(lang='es')
                                 a(href='#!')
                                     i.bi-instagram.fs-3
 
+        // Form submission popup
+        #formSuccessPopup.form-success-popup.d-none(role='dialog', aria-modal='true', aria-labelledby='formSuccessTitle')
+            .form-success-popup__backdrop(data-popup-close='true')
+            .form-success-popup__content
+                button.form-success-popup__close(type='button', aria-label='Close', data-popup-close='true') &times;
+                i.bi-check-circle.form-success-popup__icon(aria-hidden='true')
+                h2#formSuccessTitle GRACIAS, ENVIO SUCCESFUL
+                button.btn.btn-primary(type='button', data-popup-close='true') Continue
+
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 

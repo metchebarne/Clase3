@@ -221,6 +221,16 @@
                 </div>
             </div>
         </footer>
+        <!-- Form submission popup-->
+        <div class="form-success-popup d-none" id="formSuccessPopup" role="dialog" aria-modal="true" aria-labelledby="formSuccessTitle">
+            <div class="form-success-popup__backdrop" data-popup-close="true"></div>
+            <div class="form-success-popup__content">
+                <button class="form-success-popup__close" type="button" aria-label="Close" data-popup-close="true">&times;</button>
+                <i class="bi-check-circle form-success-popup__icon" aria-hidden="true"></i>
+                <h2 id="formSuccessTitle">GRACIAS, ENVIO SUCCESFUL</h2>
+                <button class="btn btn-primary" type="button" data-popup-close="true">Continue</button>
+            </div>
+        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
