@@ -40,29 +40,21 @@ html(lang='es')
                             h1.mb-5 Generate more leads with a professional landing page!
 
                             // Signup form
-
-                            // * * * * * * * * * * * * * * *
-                            // * * SB Forms Contact Form * *
-                            // * * * * * * * * * * * * * * *
-
-                            // This form is pre-integrated with SB Forms.
-                            // To make this form functional, sign up at
-                            // https://startbootstrap.com/solution/contact-forms
-                            // to get an API token!
-
-                            form.form-subscribe#contactForm(data-sb-form-api-token='API_TOKEN')
+                            form.form-subscribe#contactForm(name='contact-header', method='POST', data-netlify='true', netlify-honeypot='bot-field')
+                                input(type='hidden', name='form-name', value='contact-header')
+                                input(type='hidden', name='bot-field')
 
                                 // Email address input
                                 .row
                                     .col
-                                        input#emailAddress.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                        .invalid-feedback.text-white(data-sb-feedback='emailAddress:required')
+                                        input#emailAddress.form-control.form-control-lg(type='email' name='email' placeholder='Email Address' required)
+                                        .invalid-feedback.text-white
                                             | Email Address is required.
-                                        .invalid-feedback.text-white(data-sb-feedback='emailAddress:email')
+                                        .invalid-feedback.text-white
                                             | Email Address Email is not valid.
 
                                     .col-auto
-                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
+                                        button#submitButton.btn.btn-primary.btn-lg(type='submit') Submit
 
                                 // Submit success message
                                 //
@@ -157,36 +149,28 @@ html(lang='es')
                     .col-xl-6
                         h2.mb-4 Ready to get started? Sign up now!
                         // Signup form
-                        
-                        // * * * * * * * * * * * * * * *
-                        // * * SB Forms Contact Form * *
-                        // * * * * * * * * * * * * * * *
-
-                        // This form is pre-integrated with SB Forms.
-                        // To make this form functional, sign up at
-                        // https://startbootstrap.com/solution/contact-forms
-                        // to get an API token!
-
-                        form.form-subscribe#contactFormFooter(data-sb-form-api-token='API_TOKEN')
+                        form.form-subscribe#contactFormFooter(name='contact-footer', method='POST', data-netlify='true', netlify-honeypot='bot-field')
+                            input(type='hidden', name='form-name', value='contact-footer')
+                            input(type='hidden', name='bot-field')
 
                             // Email address input
                             .row
                                 .col
-                                    input#emailAddressBelow.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:required')
+                                    input#emailAddressBelow.form-control.form-control-lg(type='email' name='email' placeholder='Email Address' required)
+                                    .invalid-feedback.text-white
                                         | Email Address is required.
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:email')
+                                    .invalid-feedback.text-white
                                         | Email Address Email is not valid.
 
                                 .col-auto
-                                    button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
+                                    button#submitButtonFooter.btn.btn-primary.btn-lg(type='submit') Submit
 
                             // Submit success message
                             //
                             // This is what your users will see when the form
                             // has successfully submitted
 
-                            #submitSuccessMessage.d-none
+                            #submitSuccessMessageFooter.d-none
                                 .text-center.mb-3
                                     .fw-bolder Form submission successful!
                                     p To activate this form, sign up at
@@ -197,7 +181,7 @@ html(lang='es')
                             // This is what your users will see when there is
                             // an error submitting the form
 
-                            #submitErrorMessage.d-none
+                            #submitErrorMessageFooter.d-none
                                 .text-center.text-danger.mb-3 Error sending message!
 
         // Footer
@@ -236,9 +220,3 @@ html(lang='es')
         // Core theme JS
         script(src='js/scripts.js')
 
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
